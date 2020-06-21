@@ -10,31 +10,41 @@ class MyUser (AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-    def __str_(self):
+    def __str__(self):
         return self.email
 
 
 
 class MyUserManager(BaseUserManager):
     def create_user(self, email, password=None):
-        if not email:
-            raise ValueError('User must have e-mail address.')
-        user = self.model(
-            email=self.normalize_email(email)
-        )
-        user.set_password(password)
-        user.save(using=self.db)
-        return user
+        pass
 
     def create_superuser(self, email, password=None):
-        user = self.create_user(email, password=password)
-        user.is_superuser = True
-        user.is_staf = True
-        user.save(using=self._db)
+        pass
 
-        return user
 
-        objects = MyUserManager()
+def create_user(self, email, password=None):
+    if not email:
+         raise ValueError('User must have e-mail address.')
+    user = self.model(
+          email=self.normalize_email(email)
+        )
+    user.set_password(password)
+    user.save(using=self.db)
+    return user
 
-        def __str__(self):
+def create_superuser(self, email, password=None):
+    user = self.create_user(email, password=password)
+    user.is_superuser = True
+    user.is_staf = True
+    user.save(using=self._db)
+
+    return user
+
+    bjects = MyUserManager()
+
+    def __str__(self):
             return self.email
+
+def MyUser(self):
+    pass
