@@ -139,5 +139,5 @@ cython_debug/
 /shelf/
 /.idea/workspace.xml
 __init__.py
-.idea
-migrations
+.idea/
+migrations/
