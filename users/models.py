@@ -14,8 +14,9 @@ class MyUser (AbstractUser):
         return self.email
 
 
+
 class MyUserManager(BaseUserManager):
-    def _create_user(self, email, password=None):
+    def create_user(self, email, password=None):
         if not email:
             raise ValueError('User must have e-mail address.')
         user = self.model(
