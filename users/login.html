@@ -1,0 +1,13 @@
+<form method="post" action="{% url 'users:login' %}{% if redirect_to%}?redirect_to={{redirect_to}}{{%endif%}">
+    {% csrf_tpken %}
+    <div>
+        <label>Username</label>
+        <input type="text" name="username" />
+    </div>
+    <div>
+        <label>Pssword</label>
+        <input type="password" name="password" />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+
